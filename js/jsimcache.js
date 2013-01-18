@@ -1,33 +1,3 @@
-//https://github.com/rsms/js-lru
-//https://github.com/monsur/jscache/blob/master/cache.js
-//http://osteele.com/posts/2007/07/functional-javascript
-//http://osteele.com/sources/javascript/functional/
-//http://www.monsur.com/projects/jscache/
-//https://github.com/STRd6/PriorityQueue.js/blob/master/src/priority_queue.js
-
-
-
-/*LRULinkedList.prototype = {
-  first:null,
-  last:null;
-}*/
-
-//Plain Cache implementation
-
-/*generation (поколение) - Промежуток времени, занимаемый между put
-и get
-
-Пример:
-cache.put('a',1);
-cache.put('b',7);
-cache.get('a'); //Первое поколение
-cache.put('c');
-cache.get('c'); //Второе поколение
-
-Ксли в кэше 0 элементов, то поколения обнуляются
-*/
-
-
 var ICache = function(size) {
     this.cache = {};
     //Удалять по времени
@@ -91,16 +61,6 @@ var AdvancedCache = function(params) {
 
     //База данных с аттрибутами
     this.attributes = {};
-
-    function CheckAttributes(name, value, othercase){
-      if(name == undefined){
-        name= value;
-      }
-      else {
-        name = othercase;
-      }
-    };
-
     //Change attributes after every put in cache
     function ChangeAttributes(name, attribute){
 
@@ -118,29 +78,43 @@ AdvancedCache.prototype.get = function(key) {
 //положить к кэш
 AdvancedCache.prototype.put = function(key, value) {
   //Properties for this cache params
-  var info = arguments;
-  if(this.attributes[key] == undefined)this.attributes[key] = {};
-  var setattributes = this.attributes[key];
-  CheckAttributes(setattributes.remove_after, info.remove_after, function(){
-    return setattributes.remove_after-=1;
-  });
-  CheckAttributes(setattributes.limit, info.limit);
-  CheckAttributes(setattributes)
-  CheckAttributes(setattributes.check, 0, (function(){
-    return setattributes.check += 1;
-  });
-  setattributes.check = this.attributes[key].check += 1;
+
+  var CheckAttributes = function(name, value, othercase){
+      if(typeof name == "undefined" && typeof value != "undefined"){
+        return value;
+      }
+      else if (typeof othercase == "function"){
+        othercase();
+
+      }
+
+    }
+
+
+   if(arguments.length == 3){
+      var info = arguments[2];
+      if(typeof this.attributes[key] == "undefined")this.attributes[key] = {};
+      var setattributes = this.attributes[key];
+      setattributes.remove_after = CheckAttributes(setattributes.remove_after, info.remove_after);
+      CheckAttributes(setattributes.limit, info.limit);
+      CheckAttributes(setattributes.check, 0, function(){
+      setattributes.check += 1;
+    return setattributes.check;
+  })
+}
+
 
   //prqueue.put(key, info.access);
   //this.prqueue.insert(key, info.access);
   this._cache.put(key, value);
-  //Дальге работаем с датами
-  //Парсим аргументы
   this.memseconds = function(args, findname) {
     for(var i = args.length; i--;) {
       if(arguments[i][findname] !== undefined) return argumnets[i][name];
     }
+
   };
+
+
 };
 
 
@@ -149,6 +123,11 @@ AdvancedCache.prototype.putIf = function(key, value, func) {
   if(func(key)) this.put(key, value);
 };
 
+AdvancedCache.prototype.debug_remove = function(value){
+  return this.attributes[value];
+};
+
+
 
 
 //Достать из кэша, если выполняется функция
@@ -156,18 +135,6 @@ AdvancedCache.prototype.getIf = function(key, func) {
   if(func(key)) return this.get(key);
 };
 
-
-
-/*if(this.size <= this.length())
-    throw new CacheException("Cache is full");
-
-
-  this._cache.put(key, value);
-  if(this.head)
-  {
-    this.tail = key;
-    var list = this.tail;
-  }*/
 
 AdvancedCache.prototype.length = function() {
   return this._cache.length();
@@ -236,11 +203,6 @@ var PriorityQueue = function(sortfunc) {
         if(data.size() > 0) return data[0].value;
       },
 
-      get: function(value) {
-        //!
-      },
-
-      //Возвращает пару k,v с минимальным значением ключа
       extract_min: function() {
         return data[0].value > data[data.length - 1] ? data[data.length - 1] : data[0];
       },
@@ -288,66 +250,3 @@ var PriorityQueue = function(sortfunc) {
     };
 
   };
-
-
-/*function test_cache() {
-  var cache = new AdvancedCache({
-    limit: 10,
-    access: 10
-  });
-  cache.put('A', 7, {
-    access: 2
-  });
-  cache.put('A', 7, {
-    access: 2
-  });
-  cache.put('A', 7, {
-    access: 2
-  });
-  cache.put('B', 7, {
-    access: 8
-  });
-  cache.get('A');
-}*/
-
-
-
-//Сортировка формата a.value
-
-
-function my_test_queue(a, b) {
-  return a.value > b.value;
-}
-
-
-function test_queue() {
-  var pr = PriorityQueue();
-  pr.add_sort(my_test_queue);
-  pr.insert('zum', 50, 5);
-  pr.insert('access', 4);
-  pr.insert('gloom', 8);
-  pr.insert('data', 0);
-  pr.insert('peck', 0);
-  pr.insert('heck', 4);
-  pr.update('prom', 5);
-  pr.remove_sort();
-
-  pr.sort_by_value();
-  //console.log('RESULT ' + pr.pop().value);
-}
-
-function test_cache(){
-  var cache = new AdvancedCache(limit=7);
-  cache.put("A", "B", remove_after=7);
-  cache.put("news", "Lenta.ru");
-  cache.put("news", "EchoMSK");
-  cache.put("news", "Russia Today");
- //cache.put("A", "C");
-  console.log(cache.length());
-}
-
-test_cache();
-
-
-
-//Эт тоже надо https://github.com/soulwire/sketch.js/tree/master/js
