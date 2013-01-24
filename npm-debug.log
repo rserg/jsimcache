@@ -1,0 +1,508 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'automaton' ]
+info using npm@1.1.24
+info using node@v0.7.10-pre
+verbose config file /home/haunted/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose cache add [ 'automaton', null ]
+silly cache add: name, spec, args [ undefined, 'automaton', [ 'automaton', null ] ]
+verbose parsed url { pathname: 'automaton', path: 'automaton', href: 'automaton' }
+verbose addNamed [ 'automaton', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'automaton', '', false ]
+verbose raw, before any munging automaton
+verbose url resolving [ 'https://registry.npmjs.org/', './automaton' ]
+verbose url resolved https://registry.npmjs.org/automaton
+http GET https://registry.npmjs.org/automaton
+http 200 https://registry.npmjs.org/automaton
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"E94X0T4K86P60O6PO9KLYPSJ4"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:32 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '132033' } ]
+silly name, range, hasData 2 [ 'automaton', '', true ]
+silly versions [ 'automaton',
+silly versions   [ '0.0.1',
+silly versions     '0.0.2',
+silly versions     '0.0.3',
+silly versions     '0.0.4',
+silly versions     '0.0.5',
+silly versions     '0.0.6',
+silly versions     '0.0.8',
+silly versions     '0.0.9',
+silly versions     '0.0.10',
+silly versions     '0.0.11',
+silly versions     '0.0.12',
+silly versions     '0.0.13',
+silly versions     '0.0.14',
+silly versions     '0.0.15',
+silly versions     '0.1.0' ] ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: 'c4357e21fac049771e75d91ffc5349dfacbe8d18',
+verbose bin dist     tarball: 'http://registry.npmjs.org/automaton/-/automaton-0.1.0.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/automaton/-/automaton-0.1.0.tgz',
+verbose addRemoteTarball   'c4357e21fac049771e75d91ffc5349dfacbe8d18' ]
+verbose fetch to /tmp/npm-1358575624749/1358575624749-0.9586755072232336/tmp.tgz
+http GET https://registry.npmjs.org/automaton/-/automaton-0.1.0.tgz
+http 200 https://registry.npmjs.org/automaton/-/automaton-0.1.0.tgz
+silly updated sha bytes 21755
+info shasum c4357e21fac049771e75d91ffc5349dfacbe8d18
+info shasum /tmp/npm-1358575624749/1358575624749-0.9586755072232336/tmp.tgz
+verbose unpack /tmp/npm-1358575624749/1358575624749-0.9586755072232336/tmp.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+silly extracting entry package.json
+silly extracting entry .npmignore
+silly extracting entry README.md
+silly extracting entry LICENSE
+silly extracting entry example_task.js
+silly extracting entry base_autofile.js
+silly extracting entry index.js
+silly extracting entry .travis.yml
+silly extracting entry lib/Logger.js
+silly extracting entry lib/string/cast-interpolate.js
+silly extracting entry lib/string/interpolate.js
+silly extracting entry .dejavurc
+silly extracting entry bin/automaton.js
+silly extracting entry .jshintrc
+silly extracting entry tasks/chmod.js
+silly extracting entry tasks/init.js
+silly extracting entry tasks/mkdir.js
+silly extracting entry tasks/mv.js
+silly extracting entry tasks/rm.js
+silly extracting entry tasks/cp.js
+silly extracting entry tasks/scaffolding-append.js
+silly extracting entry tasks/scaffolding-close.js
+silly extracting entry tasks/scaffolding-file-rename.js
+silly extracting entry tasks/scaffolding-replace.js
+silly extracting entry tasks/symlink.js
+silly extracting entry tasks/run.js
+verbose caching /tmp/npm-1358575624749/1358575624749-0.9586755072232336/package/package.json
+verbose loadDefaults automaton@0.1.0
+verbose from cache /tmp/npm-1358575624749/1358575624749-0.9586755072232336/package/package.json
+verbose tar.pack [ '/home/haunted/.npm/automaton/0.1.0/package.tgz',
+verbose tar.pack   '/tmp/npm-1358575624749/1358575624749-0.9586755072232336/package' ]
+verbose tarball /home/haunted/.npm/automaton/0.1.0/package.tgz
+verbose folder /tmp/npm-1358575624749/1358575624749-0.9586755072232336/package
+verbose unpack /home/haunted/.npm/automaton/0.1.0/package.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+silly extracting entry package.json
+silly extracting entry .npmignore
+silly extracting entry README.md
+silly extracting entry LICENSE
+silly extracting entry index.js
+silly extracting entry base_autofile.js
+silly extracting entry example_task.js
+silly extracting entry .dejavurc
+silly extracting entry tasks/mkdir.js
+silly extracting entry tasks/scaffolding-file-rename.js
+silly extracting entry tasks/symlink.js
+silly extracting entry tasks/scaffolding-append.js
+silly extracting entry tasks/scaffolding-replace.js
+silly extracting entry tasks/scaffolding-close.js
+silly extracting entry tasks/run.js
+silly extracting entry tasks/cp.js
+silly extracting entry tasks/rm.js
+silly extracting entry tasks/chmod.js
+silly extracting entry tasks/mv.js
+silly extracting entry tasks/init.js
+silly extracting entry bin/automaton.js
+silly extracting entry .jshintrc
+silly extracting entry .travis.yml
+silly extracting entry lib/Logger.js
+silly extracting entry lib/string/interpolate.js
+silly extracting entry lib/string/cast-interpolate.js
+verbose caching /home/haunted/.npm/automaton/0.1.0/package/package.json
+verbose loadDefaults automaton@0.1.0
+silly updated sha bytes 22733
+info shasum ebe3d4200d9b1608c85dc76e0e9cf0c63eb047d9
+info shasum /home/haunted/.npm/automaton/0.1.0/package.tgz
+verbose from cache /home/haunted/.npm/automaton/0.1.0/package/package.json
+verbose chmod /home/haunted/.npm/automaton/0.1.0/package.tgz 644
+verbose chown [ '/home/haunted/.npm/automaton/0.1.0/package.tgz', 1000, 1000 ]
+silly resolved [ { name: 'automaton',
+silly resolved     version: '0.1.0',
+silly resolved     description: 'Task automation tool',
+silly resolved     main: 'index.js',
+silly resolved     scripts: { test: 'mocha' },
+silly resolved     repository: 
+silly resolved      { type: 'git',
+silly resolved        url: 'git://github.com/IndigoUnited/automaton.git' },
+silly resolved     keywords: 
+silly resolved      [ 'automation',
+silly resolved        'automatic',
+silly resolved        'automaton',
+silly resolved        'batch',
+silly resolved        'script',
+silly resolved        'task',
+silly resolved        'tasks',
+silly resolved        'async',
+silly resolved        'build',
+silly resolved        'test',
+silly resolved        'minimize',
+silly resolved        'declarative',
+silly resolved        'concat',
+silly resolved        'scaffolding',
+silly resolved        'uglify',
+silly resolved        'minify',
+silly resolved        'mkdir',
+silly resolved        'cp',
+silly resolved        'rm' ],
+silly resolved     author: { name: 'Indigo United' },
+silly resolved     license: 'MIT',
+silly resolved     dependencies: 
+silly resolved      { async: '~0.1.22',
+silly resolved        dejavu: '~0.2.0',
+silly resolved        mout: '~0.2.0',
+silly resolved        colors: '~0.6.0-1',
+silly resolved        mkdirp: '~0.3.4',
+silly resolved        fstream: '~0.1.19',
+silly resolved        rimraf: '~2.0.2',
+silly resolved        optimist: '~0.3.5',
+silly resolved        glob: '~3.1.14',
+silly resolved        'update-notifier': '~0.1.1' },
+silly resolved     devDependencies: { 'expect.js': '~0.2.0', mocha: '~1.7.3', inherits: '~1.0.0' },
+silly resolved     preferGlobal: true,
+silly resolved     bin: { automaton: 'bin/automaton.js' },
+silly resolved     _id: 'automaton@0.1.0',
+silly resolved     optionalDependencies: {},
+silly resolved     engines: { node: '*' },
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.24',
+silly resolved     _nodeVersion: 'v0.7.10-pre',
+silly resolved     _defaultsLoaded: true,
+silly resolved     dist: { shasum: 'ebe3d4200d9b1608c85dc76e0e9cf0c63eb047d9' },
+silly resolved     _from: 'automaton' } ]
+info into /usr/local/lib automaton@0.1.0
+info installOne automaton@0.1.0
+verbose from cache /home/haunted/.npm/automaton/0.1.0/package/package.json
+info unbuild /usr/local/lib/node_modules/automaton
+verbose unpack /home/haunted/.npm/automaton/0.1.0/package.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+silly extracting entry package.json
+silly extracting entry .npmignore
+silly extracting entry README.md
+silly extracting entry LICENSE
+silly extracting entry index.js
+silly extracting entry base_autofile.js
+silly extracting entry example_task.js
+silly extracting entry .dejavurc
+silly extracting entry tasks/mkdir.js
+silly extracting entry tasks/scaffolding-file-rename.js
+silly extracting entry tasks/symlink.js
+silly extracting entry tasks/scaffolding-append.js
+silly extracting entry tasks/scaffolding-replace.js
+silly extracting entry tasks/scaffolding-close.js
+silly extracting entry tasks/run.js
+silly extracting entry tasks/cp.js
+silly extracting entry tasks/rm.js
+silly extracting entry tasks/chmod.js
+silly extracting entry tasks/mv.js
+silly extracting entry tasks/init.js
+silly extracting entry bin/automaton.js
+silly extracting entry .jshintrc
+silly extracting entry .travis.yml
+silly extracting entry lib/Logger.js
+silly extracting entry lib/string/interpolate.js
+silly extracting entry lib/string/cast-interpolate.js
+verbose caching /usr/local/lib/node_modules/automaton/package.json
+verbose loadDefaults automaton@0.1.0
+info preinstall automaton@0.1.0
+verbose from cache /usr/local/lib/node_modules/automaton/package.json
+verbose readDependencies: using package.json deps
+verbose from cache /usr/local/lib/node_modules/automaton/package.json
+verbose readDependencies: using package.json deps
+verbose cache add [ 'async@~0.1.22', null ]
+silly cache add: name, spec, args [ undefined, 'async@~0.1.22', [ 'async@~0.1.22', null ] ]
+verbose parsed url { pathname: 'async@~0.1.22',
+verbose parsed url   path: 'async@~0.1.22',
+verbose parsed url   href: 'async@~0.1.22' }
+silly cache add: name, spec, args [ 'async', '~0.1.22', [ 'async', '~0.1.22' ] ]
+verbose parsed url { pathname: '~0.1.22', path: '~0.1.22', href: '~0.1.22' }
+verbose addNamed [ 'async', '~0.1.22' ]
+verbose addNamed [ null, '>=0.1.22- <0.2.0-' ]
+silly name, range, hasData [ 'async', '>=0.1.22- <0.2.0-', false ]
+verbose cache add [ 'dejavu@~0.2.0', null ]
+silly cache add: name, spec, args [ undefined, 'dejavu@~0.2.0', [ 'dejavu@~0.2.0', null ] ]
+verbose parsed url { pathname: 'dejavu@~0.2.0',
+verbose parsed url   path: 'dejavu@~0.2.0',
+verbose parsed url   href: 'dejavu@~0.2.0' }
+silly cache add: name, spec, args [ 'dejavu', '~0.2.0', [ 'dejavu', '~0.2.0' ] ]
+verbose parsed url { pathname: '~0.2.0', path: '~0.2.0', href: '~0.2.0' }
+verbose addNamed [ 'dejavu', '~0.2.0' ]
+verbose addNamed [ null, '>=0.2.0- <0.3.0-' ]
+silly name, range, hasData [ 'dejavu', '>=0.2.0- <0.3.0-', false ]
+verbose raw, before any munging async
+verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+verbose url resolved https://registry.npmjs.org/async
+http GET https://registry.npmjs.org/async
+verbose raw, before any munging dejavu
+verbose url resolving [ 'https://registry.npmjs.org/', './dejavu' ]
+verbose url resolved https://registry.npmjs.org/dejavu
+http GET https://registry.npmjs.org/dejavu
+verbose cache add [ 'mout@~0.2.0', null ]
+silly cache add: name, spec, args [ undefined, 'mout@~0.2.0', [ 'mout@~0.2.0', null ] ]
+verbose parsed url { pathname: 'mout@~0.2.0',
+verbose parsed url   path: 'mout@~0.2.0',
+verbose parsed url   href: 'mout@~0.2.0' }
+silly cache add: name, spec, args [ 'mout', '~0.2.0', [ 'mout', '~0.2.0' ] ]
+verbose parsed url { pathname: '~0.2.0', path: '~0.2.0', href: '~0.2.0' }
+verbose addNamed [ 'mout', '~0.2.0' ]
+verbose addNamed [ null, '>=0.2.0- <0.3.0-' ]
+silly name, range, hasData [ 'mout', '>=0.2.0- <0.3.0-', false ]
+verbose cache add [ 'colors@~0.6.0-1', null ]
+silly cache add: name, spec, args [ undefined, 'colors@~0.6.0-1', [ 'colors@~0.6.0-1', null ] ]
+verbose parsed url { pathname: 'colors@~0.6.0-1',
+verbose parsed url   path: 'colors@~0.6.0-1',
+verbose parsed url   href: 'colors@~0.6.0-1' }
+silly cache add: name, spec, args [ 'colors', '~0.6.0-1', [ 'colors', '~0.6.0-1' ] ]
+verbose parsed url { pathname: '~0.6.0-1', path: '~0.6.0-1', href: '~0.6.0-1' }
+verbose addNamed [ 'colors', '~0.6.0-1' ]
+verbose addNamed [ null, '>=0.6.0-1 <0.7.0-' ]
+silly name, range, hasData [ 'colors', '>=0.6.0-1 <0.7.0-', false ]
+verbose cache add [ 'mkdirp@~0.3.4', null ]
+silly cache add: name, spec, args [ undefined, 'mkdirp@~0.3.4', [ 'mkdirp@~0.3.4', null ] ]
+verbose parsed url { pathname: 'mkdirp@~0.3.4',
+verbose parsed url   path: 'mkdirp@~0.3.4',
+verbose parsed url   href: 'mkdirp@~0.3.4' }
+silly cache add: name, spec, args [ 'mkdirp', '~0.3.4', [ 'mkdirp', '~0.3.4' ] ]
+verbose parsed url { pathname: '~0.3.4', path: '~0.3.4', href: '~0.3.4' }
+verbose addNamed [ 'mkdirp', '~0.3.4' ]
+verbose addNamed [ null, '>=0.3.4- <0.4.0-' ]
+silly name, range, hasData [ 'mkdirp', '>=0.3.4- <0.4.0-', false ]
+verbose cache add [ 'fstream@~0.1.19', null ]
+silly cache add: name, spec, args [ undefined, 'fstream@~0.1.19', [ 'fstream@~0.1.19', null ] ]
+verbose parsed url { pathname: 'fstream@~0.1.19',
+verbose parsed url   path: 'fstream@~0.1.19',
+verbose parsed url   href: 'fstream@~0.1.19' }
+silly cache add: name, spec, args [ 'fstream', '~0.1.19', [ 'fstream', '~0.1.19' ] ]
+verbose parsed url { pathname: '~0.1.19', path: '~0.1.19', href: '~0.1.19' }
+verbose addNamed [ 'fstream', '~0.1.19' ]
+verbose addNamed [ null, '>=0.1.19- <0.2.0-' ]
+silly name, range, hasData [ 'fstream', '>=0.1.19- <0.2.0-', false ]
+verbose cache add [ 'rimraf@~2.0.2', null ]
+silly cache add: name, spec, args [ undefined, 'rimraf@~2.0.2', [ 'rimraf@~2.0.2', null ] ]
+verbose parsed url { pathname: 'rimraf@~2.0.2',
+verbose parsed url   path: 'rimraf@~2.0.2',
+verbose parsed url   href: 'rimraf@~2.0.2' }
+silly cache add: name, spec, args [ 'rimraf', '~2.0.2', [ 'rimraf', '~2.0.2' ] ]
+verbose parsed url { pathname: '~2.0.2', path: '~2.0.2', href: '~2.0.2' }
+verbose addNamed [ 'rimraf', '~2.0.2' ]
+verbose addNamed [ null, '>=2.0.2- <2.1.0-' ]
+silly name, range, hasData [ 'rimraf', '>=2.0.2- <2.1.0-', false ]
+verbose cache add [ 'optimist@~0.3.5', null ]
+silly cache add: name, spec, args [ undefined, 'optimist@~0.3.5', [ 'optimist@~0.3.5', null ] ]
+verbose parsed url { pathname: 'optimist@~0.3.5',
+verbose parsed url   path: 'optimist@~0.3.5',
+verbose parsed url   href: 'optimist@~0.3.5' }
+silly cache add: name, spec, args [ 'optimist', '~0.3.5', [ 'optimist', '~0.3.5' ] ]
+verbose parsed url { pathname: '~0.3.5', path: '~0.3.5', href: '~0.3.5' }
+verbose addNamed [ 'optimist', '~0.3.5' ]
+verbose addNamed [ null, '>=0.3.5- <0.4.0-' ]
+silly name, range, hasData [ 'optimist', '>=0.3.5- <0.4.0-', false ]
+verbose cache add [ 'glob@~3.1.14', null ]
+silly cache add: name, spec, args [ undefined, 'glob@~3.1.14', [ 'glob@~3.1.14', null ] ]
+verbose parsed url { pathname: 'glob@~3.1.14',
+verbose parsed url   path: 'glob@~3.1.14',
+verbose parsed url   href: 'glob@~3.1.14' }
+silly cache add: name, spec, args [ 'glob', '~3.1.14', [ 'glob', '~3.1.14' ] ]
+verbose parsed url { pathname: '~3.1.14', path: '~3.1.14', href: '~3.1.14' }
+verbose addNamed [ 'glob', '~3.1.14' ]
+verbose addNamed [ null, '>=3.1.14- <3.2.0-' ]
+silly name, range, hasData [ 'glob', '>=3.1.14- <3.2.0-', false ]
+verbose cache add [ 'update-notifier@~0.1.1', null ]
+silly cache add: name, spec, args [ undefined,
+silly cache add: name, spec, args   'update-notifier@~0.1.1',
+silly cache add: name, spec, args   [ 'update-notifier@~0.1.1', null ] ]
+verbose parsed url { pathname: 'update-notifier@~0.1.1',
+verbose parsed url   path: 'update-notifier@~0.1.1',
+verbose parsed url   href: 'update-notifier@~0.1.1' }
+silly cache add: name, spec, args [ 'update-notifier', '~0.1.1', [ 'update-notifier', '~0.1.1' ] ]
+verbose parsed url { pathname: '~0.1.1', path: '~0.1.1', href: '~0.1.1' }
+verbose addNamed [ 'update-notifier', '~0.1.1' ]
+verbose addNamed [ null, '>=0.1.1- <0.2.0-' ]
+silly name, range, hasData [ 'update-notifier', '>=0.1.1- <0.2.0-', false ]
+verbose raw, before any munging mout
+verbose url resolving [ 'https://registry.npmjs.org/', './mout' ]
+verbose url resolved https://registry.npmjs.org/mout
+http GET https://registry.npmjs.org/mout
+verbose raw, before any munging colors
+verbose url resolving [ 'https://registry.npmjs.org/', './colors' ]
+verbose url resolved https://registry.npmjs.org/colors
+http GET https://registry.npmjs.org/colors
+verbose raw, before any munging rimraf
+verbose url resolving [ 'https://registry.npmjs.org/', './rimraf' ]
+verbose url resolved https://registry.npmjs.org/rimraf
+http GET https://registry.npmjs.org/rimraf
+verbose raw, before any munging fstream
+verbose url resolving [ 'https://registry.npmjs.org/', './fstream' ]
+verbose url resolved https://registry.npmjs.org/fstream
+http GET https://registry.npmjs.org/fstream
+verbose raw, before any munging update-notifier
+verbose url resolving [ 'https://registry.npmjs.org/', './update-notifier' ]
+verbose url resolved https://registry.npmjs.org/update-notifier
+http GET https://registry.npmjs.org/update-notifier
+verbose raw, before any munging mkdirp
+verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp' ]
+verbose url resolved https://registry.npmjs.org/mkdirp
+verbose etag "C9FGJPIOSG3DU9YY8VBH2B729"
+http GET https://registry.npmjs.org/mkdirp
+verbose raw, before any munging glob
+verbose url resolving [ 'https://registry.npmjs.org/', './glob' ]
+verbose url resolved https://registry.npmjs.org/glob
+verbose etag "CAXP5P9K25O144BXFNUBVSVK4"
+http GET https://registry.npmjs.org/glob
+verbose raw, before any munging optimist
+verbose url resolving [ 'https://registry.npmjs.org/', './optimist' ]
+verbose url resolved https://registry.npmjs.org/optimist
+verbose etag "F3CUDSRLJC6YLBFTTICVVW6EE"
+http GET https://registry.npmjs.org/optimist
+http 200 https://registry.npmjs.org/rimraf
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"4HBMPNBUI8DXZ6C4W93Y0RTV8"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:37 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '20837' } ]
+silly name, range, hasData 2 [ 'rimraf', '>=2.0.2- <2.1.0-', true ]
+silly versions [ 'rimraf',
+silly versions   [ '1.0.0',
+silly versions     '1.0.1',
+silly versions     '1.0.2',
+silly versions     '1.0.4',
+silly versions     '1.0.5',
+silly versions     '1.0.6',
+silly versions     '1.0.7',
+silly versions     '1.0.8',
+silly versions     '1.0.9',
+silly versions     '2.0.0',
+silly versions     '2.0.1',
+silly versions     '2.0.2',
+silly versions     '2.0.3',
+silly versions     '2.1.0',
+silly versions     '2.1.1' ] ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: 'f50a2965e7144e9afd998982f15df706730f56a9',
+verbose bin dist     tarball: 'http://registry.npmjs.org/rimraf/-/rimraf-2.0.3.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/rimraf/-/rimraf-2.0.3.tgz',
+verbose addRemoteTarball   'f50a2965e7144e9afd998982f15df706730f56a9' ]
+verbose fetch to /tmp/npm-1358575624749/1358575628563-0.6012108330614865/tmp.tgz
+http GET https://registry.npmjs.org/rimraf/-/rimraf-2.0.3.tgz
+http 200 https://registry.npmjs.org/colors
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"6YMW4Y9S6F8G2ZUIRQX35XW5J"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:37 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '3870' } ]
+silly name, range, hasData 2 [ 'colors', '>=0.6.0-1 <0.7.0-', true ]
+silly versions [ 'colors', [ '0.3.0', '0.5.0', '0.5.1', '0.6.0', '0.6.0-1' ] ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: '6dbb68ceb8bc60f2b313dcc5ce1599f06d19e67a',
+verbose bin dist     tarball: 'http://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz',
+verbose addRemoteTarball   '6dbb68ceb8bc60f2b313dcc5ce1599f06d19e67a' ]
+verbose fetch to /tmp/npm-1358575624749/1358575628618-0.3043015846051276/tmp.tgz
+http GET https://registry.npmjs.org/colors/-/colors-0.6.0-1.tgz
+http 200 https://registry.npmjs.org/mout
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"A89GPF8N34L6AB5C3IGSWLZX9"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:37 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '19660' } ]
+silly name, range, hasData 2 [ 'mout', '>=0.2.0- <0.3.0-', true ]
+silly versions [ 'mout', [ '0.1.0', '0.2.0' ] ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: '9a454b7f9cdda0a11b0b7e4b87041885a5e095b9',
+verbose bin dist     tarball: 'http://registry.npmjs.org/mout/-/mout-0.2.0.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/mout/-/mout-0.2.0.tgz',
+verbose addRemoteTarball   '9a454b7f9cdda0a11b0b7e4b87041885a5e095b9' ]
+verbose fetch to /tmp/npm-1358575624749/1358575628673-0.08351957285776734/tmp.tgz
+http GET https://registry.npmjs.org/mout/-/mout-0.2.0.tgz
+http 200 https://registry.npmjs.org/fstream
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"6HV5X39ECU6MYPYQ16H0HUIMK"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:37 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '30363' } ]
+silly name, range, hasData 2 [ 'fstream', '>=0.1.19- <0.2.0-', true ]
+silly versions [ 'fstream',
+silly versions   [ '0.1.1',
+silly versions     '0.1.2',
+silly versions     '0.1.3',
+silly versions     '0.1.5',
+silly versions     '0.1.6',
+silly versions     '0.1.7',
+silly versions     '0.1.8',
+silly versions     '0.1.9',
+silly versions     '0.1.10',
+silly versions     '0.1.11',
+silly versions     '0.1.12',
+silly versions     '0.1.13',
+silly versions     '0.1.14',
+silly versions     '0.1.15',
+silly versions     '0.1.16',
+silly versions     '0.1.17',
+silly versions     '0.1.18',
+silly versions     '0.1.19',
+silly versions     '0.1.20',
+silly versions     '0.1.21' ] ]
+verbose bin dist [ null,
+verbose bin dist   { shasum: '7968bd1891653f19780f560fba9d2176b1950388',
+verbose bin dist     tarball: 'http://registry.npmjs.org/fstream/-/fstream-0.1.21.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/fstream/-/fstream-0.1.21.tgz',
+verbose addRemoteTarball   '7968bd1891653f19780f560fba9d2176b1950388' ]
+verbose fetch to /tmp/npm-1358575624749/1358575628971-0.5301756449043751/tmp.tgz
+http GET https://registry.npmjs.org/fstream/-/fstream-0.1.21.tgz
+http 200 https://registry.npmjs.org/update-notifier
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.1 (Erlang OTP/R15B)',
+silly get cb     etag: '"2KGW4PT5ONA2IRMWUFBT3THQX"',
+silly get cb     date: 'Sat, 19 Jan 2013 06:05:37 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '13798' } ]
+silly name, range, hasData 2 [ 'update-notifier', '>=0.1.1- <0.2.0-', true ]
+silly versions [ 'update-notifier', [] ]
+verbose about to build /usr/local/lib/node_modules/automaton
+info unbuild /usr/local/lib/node_modules/automaton
+verbose from cache /usr/local/lib/node_modules/automaton/package.json
+info preuninstall automaton@0.1.0
+info uninstall automaton@0.1.0
+verbose unbuild automaton@0.1.0 [ true,
+verbose unbuild automaton@0.1.0   '/usr/local/lib/node_modules',
+verbose unbuild automaton@0.1.0   '/usr/local/lib/node_modules' ]
+verbose binRoot [ '/usr/local/bin', { automaton: 'bin/automaton.js' } ]
+info postuninstall automaton@0.1.0
+ERR! Error: No compatible version found: update-notifier@'>=0.1.1- <0.2.0-'
+ERR! No valid targets found.
+ERR! Perhaps not compatible with your version of node?
+ERR!     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:496:10)
+ERR!     at next_ (/usr/local/lib/node_modules/npm/lib/cache.js:446:17)
+ERR!     at next (/usr/local/lib/node_modules/npm/lib/cache.js:423:44)
+ERR!     at /usr/local/lib/node_modules/npm/lib/cache.js:416:5
+ERR!     at saved (/usr/local/lib/node_modules/npm/lib/utils/npm-registry-client/get.js:151:7)
+ERR!     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:230:7
+ERR!     at Object.oncomplete (fs.js:251:15)
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 3.5.0-17-generic
+ERR! command "node" "/usr/local/bin/npm" "install" "-g" "automaton"
+ERR! cwd /home/haunted/Dropbox/Projects/jsprojects/jsimcache
+ERR! node -v v0.7.10-pre
+ERR! npm -v 1.1.24
+ERR! message No compatible version found: update-notifier@'>=0.1.1- <0.2.0-'
+ERR! message No valid targets found.
+ERR! message Perhaps not compatible with your version of node?
+verbose exit [ 1, true ]

@@ -45,8 +45,7 @@ var queue = function() {
 var AdvancedCache = function(params) {
     this.hashindex = 2654435769;
     this.hashshift = 8;
-    //console.log("THIS " + (typeof params.limit == "undefined"));
-    this.limit = (typeof params.limit == "undefined" || params.limit < 0 ? 0 : params.limit);
+    this.limit = (typeof params.limit == "undefined" || params.limit < 0 ? 1000: params.limit);
 
     //Через сколько поколений удалять элементы
     this.generations = 0;
@@ -71,7 +70,7 @@ AdvancedCache.prototype.get = function(key) {
   if(this.length() > 0) this.generations += 1;
   else this.generations = 0;
 
-  if(prqueue.top() == 0) prqueue.get();
+  if(this.prqueue.top() == 0) this.prqueue.get();
   return this._cache.get(key);
 };
 
@@ -90,6 +89,9 @@ AdvancedCache.prototype.put = function(key, value) {
 
     }
 
+    if(this.limit < this._cache.length())
+      return 0
+
 
    if(arguments.length == 3){
       var info = arguments[2];
@@ -99,7 +101,7 @@ AdvancedCache.prototype.put = function(key, value) {
       CheckAttributes(setattributes.limit, info.limit);
       CheckAttributes(setattributes.check, 0, function(){
       setattributes.check += 1;
-    return setattributes.check;
+    //return setattributes.check;
   })
 }
 
@@ -144,6 +146,14 @@ AdvancedCache.prototype.length = function() {
 AdvancedCache.prototype.hash = function(key) {
 
   return(key * this.hashindex) >> this.hashshift;
+};
+
+AdvancedCache.prototype.addQueue = function(key){
+
+};
+
+AdvancedCache.prototype.addLimit = function(newlimit){
+  this.limit = newlimit;
 };
 
 
