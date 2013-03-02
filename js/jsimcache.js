@@ -28,7 +28,7 @@ ICache.prototype.hasItem = function(item) {
 
 
 
-//Очередь для поколений
+//Queue for generations
 
 var queue = function() {
     this._queue = [];
@@ -40,7 +40,7 @@ var queue = function() {
       pop: function() {
         return this._queue.shift();
       }
-    }
+    };
   };
 
 
@@ -54,7 +54,7 @@ limit - maximum elements on the cache
 var ConstructCache = function(){
   var somearguments = arguments;
   this._build_cache = somearguments.cache;
-  var properties={}
+  var properties={};
   //Create config for cache
   var confCache = function createConfcache(item){
 
@@ -86,36 +86,59 @@ var ConstructCache = function(){
 
     setMemSeconds: function(memseconds){
       confCache("memsec").set(memseconds);
-  }
+    },
+
+
+    setValue: function(newvalue){
+      confCache("newvalue").set(newvalue);
+    },
+    getValue: function(value){
+     return confCache(value).get();
+    }
   };
 };
 
-
-var AdvancedCache = function(params) {
+var AdvancedCache = function(limit) {
     this.hashindex = 2654435769;
     this.hashshift = 8;
-    this.limit = (typeof params.limit == "undefined" || params.limit < 0 ? 1000: params.limit);
-
-    console.log(arguments);
     this.buildCache = ConstructCache();
-    this.buildCache.setLimit(10000);
+    this.buildCache.setLimit(limit);
+    this.buildCache.setValue("access", 1); //access values
+
+    //console.log(arguments["limit"]);
+    this.limit = this.buildCache.getLimit();
     //Через сколько поколений удалять элементы
     this.generations = 0;
-    this.count_of_generations = params.generations;
-    this.access = params.access;
+    this.count_of_generations = 1;
+    this.access = this.buildCache.getValue("access");
     //Save current time
-    this.memseconds = params.memseconds;
+    this.memseconds = 10000;
     this.gens = new queue();
     this.prqueue = new PriorityQueue();
     //Подумать, как сделать быстрый доступ к текущему поколению
     this._cache = new ICache(this.limit);
 
-    //База данных с аттрибутами
+    //Data base fo attributes;
     this.attributes = {};
+    var attributeConf = {
+      GLOBAL:0,
+      PERSONAL:1
+    };
+  this.attributeClass = {limit:attributeConf.GLOBAL, remove_after:attributeConf.GLOBAL};
     //Change attributes after every put in cache
     function ChangeAttributes(name, attribute){
 
     }
+
+  //Global attributes for every iterations on cache
+  this.GlobalAttributes = function(value){
+    var valueStore={};
+    return {
+      set:function(num){
+       valueStore[value] = num;
+      }
+    }
+  }
   };
 
 AdvancedCache.prototype.get = function(key) {
@@ -141,12 +164,13 @@ AdvancedCache.prototype.put = function(key, value) {
     }
 
     if(this.limit < this._cache.length())
-      return 0
-
+      return 0;
 
    if(arguments.length == 3){
       var info = arguments[2];
       if(typeof this.attributes[key] == "undefined")this.attributes[key] = {};
+
+      //Create store of attributes for this key
       var setattributes = this.attributes[key];
       setattributes.remove_after = CheckAttributes(setattributes.remove_after, info.remove_after);
       CheckAttributes(setattributes.limit, info.limit);
