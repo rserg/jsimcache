@@ -42,16 +42,68 @@ var queue = function() {
       }
     }
   };
+
+
+
+//Construct properties new cache
+/*
+limit - maximum elements on the cache
+*/
+
+
+var ConstructCache = function(){
+  var somearguments = arguments;
+  this._build_cache = somearguments.cache;
+  var properties={}
+  //Create config for cache
+  var confCache = function createConfcache(item){
+
+    return {
+     //Set new value
+      set: function(value){
+       properties[item] = value
+      },
+      get:function(){
+        console.log(properties);
+        if(item in properties)
+          return properties[item]
+
+        return null;
+    }
+      };
+  };
+
+  return {
+
+    //Make a new maximum value on cache
+    setLimit: function(limit){
+      confCache("limit").set(limit)
+    },
+
+    getLimit: function(){
+      return confCache("limit").get();
+    },
+
+    setMemSeconds: function(memseconds){
+      confCache("memsec").set(memseconds);
+  }
+  };
+};
+
+
 var AdvancedCache = function(params) {
     this.hashindex = 2654435769;
     this.hashshift = 8;
     this.limit = (typeof params.limit == "undefined" || params.limit < 0 ? 1000: params.limit);
 
+    console.log(arguments);
+    this.buildCache = ConstructCache();
+    this.buildCache.setLimit(10000);
     //Через сколько поколений удалять элементы
     this.generations = 0;
     this.count_of_generations = params.generations;
     this.access = params.access;
-    //Сохраняем время
+    //Save current time
     this.memseconds = params.memseconds;
     this.gens = new queue();
     this.prqueue = new PriorityQueue();
@@ -77,7 +129,6 @@ AdvancedCache.prototype.get = function(key) {
 //положить к кэш
 AdvancedCache.prototype.put = function(key, value) {
   //Properties for this cache params
-
   var CheckAttributes = function(name, value, othercase){
       if(typeof name == "undefined" && typeof value != "undefined"){
         return value;
@@ -115,8 +166,6 @@ AdvancedCache.prototype.put = function(key, value) {
     }
 
   };
-
-
 };
 
 
@@ -153,7 +202,7 @@ AdvancedCache.prototype.addQueue = function(key){
 };
 
 AdvancedCache.prototype.addLimit = function(newlimit){
-  this.limit = newlimit;
+  this.buildCache.setLimit(newlimit);
 };
 
 
@@ -260,3 +309,4 @@ var PriorityQueue = function(sortfunc) {
     };
 
   };
+
